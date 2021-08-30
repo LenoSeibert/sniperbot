@@ -1,1 +1,1 @@
-#Sniper Bot 1.0
+# Sniper Bot 1.0

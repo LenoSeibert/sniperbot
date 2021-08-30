@@ -1,8 +1,8 @@
-#Sniper Bot 1.0
+# Sniper Bot 1.0
 
 **Este arquivo é para consulta**
 
-##TradingView Widget
+## TradingView Widget
 
 ```<!-- TradingView Widget BEGIN -->
   <div class="tradingview-widget-container">
