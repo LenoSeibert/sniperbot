@@ -25,17 +25,20 @@ function App() {
     const tv = new window.TradingView.widget({
       autosize: true,
       symbol: 'BINANCE:BTCUSDT',
-      interval: '60',
       timezone: 'Etc/UTC',
       theme: 'dark',
       style: '1',
       locale: 'br',
       toolbar_bg: '#f1f3f6',
-      enable_publishing: false,
+      enable_publishing: true,
+      withdateranges: true,
+      range: 'ALL',
       hide_side_toolbar: false,
       allow_symbol_change: true,
       details: true,
-      container_id: 'tradingview_66414',
+      hotlist: true,
+      calendar: true,
+      container_id: 'tradingview_f658d',
     })
     setTradingView(tv)
   }, [])
@@ -44,7 +47,7 @@ function App() {
     <div class="">
       <h2>SniperBot 1.0</h2>
       <div class="tradingview-widget-container">
-        <div id="tradingview_66414"></div>
+        <div id="tradingview_f658d"></div>
       </div>
       <div>
         <div>

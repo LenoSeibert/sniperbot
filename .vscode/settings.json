@@ -3,7 +3,9 @@
     "autosize",
     "browserslist",
     "btcusdt",
+    "hotlist",
     "tradingview",
-    "webfonts"
+    "webfonts",
+    "withdateranges"
   ]
 }
