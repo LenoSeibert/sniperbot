@@ -44,12 +44,24 @@ function App() {
   }, [])
 
   return (
-    <div class="">
+    <div className="">
       <h2>SniperBot 1.0</h2>
-      <div class="tradingview-widget-container">
+      <div className="tradingview-widget-container">
         <div id="tradingview_f658d"></div>
       </div>
-      <div>
+      <div className="dashboard">
+        <div className="a">
+          <b>Snipe:</b> <br />
+          Symbol:
+          <select name="" id="symbol" defaultValue={'BTCUSDT'}>
+            <option value="">BTCUSDT</option>
+            <option value="">ETHUSDT</option>
+          </select>
+          <br />
+          Buy at: <input type="number" name="" id="buy" defaultValue={0} />{' '}
+          <br />
+          Sell at: <input type="number" name="" id="sell" defaultValue={0} />
+        </div>
         <div>
           <b>Ticker 24H</b>
           <br />
