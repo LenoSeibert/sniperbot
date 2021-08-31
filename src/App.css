@@ -23,3 +23,8 @@ body {
   display: flex;
   flex-direction: row;
 }
+.dashboard div {
+  text-align: left;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
