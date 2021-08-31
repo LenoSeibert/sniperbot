@@ -27,7 +27,7 @@ function App() {
       setProfit({
         value: profit.value,
         perc: profit.perc,
-        lasBuy: lastPrice,
+        lastBuy: lastPrice,
       })
     } else if (
       config.side === 'SELL' &&
@@ -41,7 +41,7 @@ function App() {
       setProfit({
         value: profit.value + lastProfit,
         perc: profit.perc + ((lastPrice * 100) / profit.lastBuy - 100),
-        lasBuy: 0,
+        lastBuy: 0,
       })
     }
   }
@@ -75,18 +75,12 @@ function App() {
       interval: '60',
       timezone: 'Etc/UTC',
       theme: 'dark',
-
       style: '1',
-      locale: 'br',
+      locale: 'en',
       toolbar_bg: '#f1f3f6',
-      enable_publishing: true,
-      withdateranges: true,
-
-      hide_side_toolbar: false,
+      enable_publishing: false,
       allow_symbol_change: true,
       details: true,
-      hotlist: true,
-      calendar: true,
       container_id: 'tradingview_f658d',
     })
     setTradingView(tv)
@@ -95,6 +89,7 @@ function App() {
   function onSymbolChange(event) {
     setConfig((prevState) => ({ ...prevState, symbol: event.target.value }))
   }
+
   function onValueChange(event) {
     setConfig((prevState) => ({
       ...prevState,
@@ -104,14 +99,15 @@ function App() {
 
   return (
     <div>
-      <h2>SniperBot 1.0</h2>
+      <h1>SniperBot 1.0</h1>
       <div className="tradingview-widget-container">
         <div id="tradingview_f658d"></div>
       </div>
       <div className="dashboard">
-        <div className="a">
-          <b>Snipe:</b> <br />
-          Symbol:
+        <div>
+          <b>Snipe:</b>
+          <br />
+          Symbol:{' '}
           <select
             id="symbol"
             defaultValue={config.symbol}
@@ -121,7 +117,7 @@ function App() {
             <option>ETHUSDT</option>
           </select>
           <br />
-          Buy at:
+          Buy at:{' '}
           <input
             type="number"
             id="buy"
@@ -129,27 +125,36 @@ function App() {
             onChange={onValueChange}
           />
           <br />
-          Sell at:
+          Sell at:{' '}
           <input
             type="number"
             id="sell"
             defaultValue={config.sell}
             onChange={onValueChange}
           />
-        </div>
-        <div>
-          <b>Profit</b> <br />
-          Profit: {profit && profit.value.toFixed(8)} <br />
-          Profit %: {profit && profit.perc.toFixed(2)}
-        </div>
-        <div>
-          <b>Ticker 24H</b>
           <br />
-          Open:{ticker && ticker.o} <br />
-          Hight:{ticker && ticker.h} <br />
-          Low:{ticker && ticker.l} <br />
-          Last:{ticker && ticker.c} <br />
-          Change %:{ticker && ticker.P} <br />
+        </div>
+        <div>
+          <b>Profit:</b>
+          <br />
+          Profit: {profit && profit.value.toFixed(8)}
+          <br />
+          Profit %: {profit && profit.perc.toFixed(2)}
+          <br />
+        </div>
+        <div>
+          <b>Ticker 24h:</b>
+          <br />
+          Open: {ticker && ticker.o}
+          <br />
+          High: {ticker && ticker.h}
+          <br />
+          Low: {ticker && ticker.l}
+          <br />
+          Last: {ticker && ticker.c}
+          <br />
+          Change %: {ticker && ticker.P}
+          <br />
         </div>
       </div>
     </div>
