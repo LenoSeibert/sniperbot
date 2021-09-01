@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import useWebSocket from 'react-use-websocket'
+import axios from 'axios'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     const lastPrice = parseFloat(ticker.c)
     if (config.side === 'BUY' && config.buy > 0 && lastPrice <= config.buy) {
       console.log('BUY ' + lastPrice)
+      buyNow()
       config.side = 'SELL'
 
       setProfit({
@@ -35,7 +37,9 @@ function App() {
       lastPrice >= config.sell
     ) {
       console.log('SELL ' + lastPrice)
+      sellNow()
       config.side = 'BUY'
+
       const lastProfit = lastPrice - profit.lastBuy
 
       setProfit({
@@ -96,7 +100,18 @@ function App() {
       [event.target.id]: parseFloat(event.target.value),
     }))
   }
-
+  function buyNow(event) {
+    axios
+      .post('http://localhost:3001/BUY/' + config.symbol + '/0.01')
+      .then((result) => console.log(result.data))
+      .catch((err) => console.error(err))
+  }
+  function sellNow(event) {
+    axios
+      .post('http://localhost:3001/SELL/' + config.symbol + '/0.01')
+      .then((result) => console.log(result.data))
+      .catch((err) => console.error(err))
+  }
   return (
     <div>
       <h1>SniperBot 1.0</h1>
@@ -141,6 +156,8 @@ function App() {
           <br />
           Profit %: {profit && profit.perc.toFixed(2)}
           <br />
+          Sell: {config.sell} <br />
+          Buy: {profit.lastBuy}
         </div>
         <div>
           <b>Ticker 24h:</b>
