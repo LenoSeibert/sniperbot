@@ -2,19 +2,18 @@
 
 **Não implementar esse bot em produção!!**
 
-# Esse pprojeto foi concebido seguindo a webSerie
+# Esse projeto foi concebido seguindo a webSerie
 
 <i>Essa serie ficará offline em breve</i>
+
 [Site do professor Luiz](https://www.luiztools.com.br/sniperbot-1)
 
-Deixem o que acharam do episódio, suas dúvidas do conteúdo e suas dúvidas sobre o curso completo na seção de comentários abaixo do vídeo. Às 20h, este grupo também estará aberto para dúvidas diretamente comigo, ao vivo, recomendam que assistam ao episódio até lá.
-
-E abaixo todos os materiais citados nos vídeos e lives até o momento:
+E abaixo todos os materiais
 
 ### Links de Downloads:
 
-- nodejs.org
-- code.visualstudio.com
+- https://nodejs.org
+- https://code.visualstudio.com
 - https://www.tradingview.com/widget/advanced-chart/
 
 ### Ebook gratuito de HTML+CSS+JS:
@@ -35,11 +34,15 @@ E abaixo todos os materiais citados nos vídeos e lives até o momento:
 
 ### URL da Stream de Ticker:
 
-- wss://stream.binance.com:9443/stream?streams=btcusdt@ticker
+```
+wss://stream.binance.com:9443/stream?streams=btcusdt@ticker
+```
 
 ### URL da Stream de Ticker + Candles:
 
-- wss://stream.binance.com:9443/stream?streams=btcusdt@ticker/btcusdt@kline_1m
+```
+wss://stream.binance.com:9443/stream?streams=btcusdt@ticker/btcusdt@kline_1m
+```
 
 ### Link da Binance Testnet:
 
@@ -64,3 +67,7 @@ E abaixo todos os materiais citados nos vídeos e lives até o momento:
 ### Exemplo de cálculo do RSI:
 
 - http://dontpad.com/luiztools
+
+### Repositório original da web serie.
+
+- https://github.com/luiztools-cursos/sniperbot-alunos
